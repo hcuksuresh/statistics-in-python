@@ -3,6 +3,9 @@
 Created on Fri Sep 29 10:45:22 2017
 
 @author: sarwesh suman
+
+Lasso = L1 regularization
+
 """
 
 import pandas as pd
