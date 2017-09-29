@@ -6,9 +6,11 @@ Created on Fri Sep 29 12:21:42 2017
 
 """
 from sklearn.datasets import load_boston
-from sklearn.linear_model import LinearRegression,Ridge
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn import tree
+import os
 
 data = load_boston()
 
