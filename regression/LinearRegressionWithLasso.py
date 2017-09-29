@@ -6,6 +6,9 @@ Created on Fri Sep 29 10:45:22 2017
 
 Lasso = L1 regularization
 
+Performs L1 regularization, i.e. adds penalty equivalent to absolute value of the magnitude of coefficients
+Minimization objective = LS Obj + α * (sum of absolute value of coefficients)
+
 """
 
 import pandas as pd

@@ -6,6 +6,9 @@ Created on Fri Sep 29 12:21:42 2017
 
 Ridge  = L2 regularization
 
+Performs L2 regularization, i.e. adds penalty equivalent to square of the magnitude of coefficients
+Minimization objective = LS Obj + α * (sum of square of coefficients)
+
 """
 
 import pandas as pd
