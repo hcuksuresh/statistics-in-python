@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep 29 12:21:42 2017
+Created on Fri Sep 29 14:38:24 2017
 
 @author: sarwesh suman
 
-Ridge  = L2 regularization
+KNN regression
 
 """
 
 import pandas as pd
-from sklearn.linear_model import Ridge, Lasso, LinearRegression
+from sklearn.neighbors import KNeighborsRegressor
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -42,23 +42,11 @@ target = df['Senseout']
 
 x_train,x_test,y_train,y_test = train_test_split(features,target,train_size=0.7)
 
-lr = LinearRegression()
-lasso = Lasso(alpha=1e-10)
-ridge = Ridge(alpha=1e-10)
+model = KNeighborsRegressor(n_neighbors=5)
 
-lr.fit(x_train,y_train)
-lasso.fit(x_train,y_train)
-ridge.fit(x_train,y_train)
+model.fit(x_train,y_train)
 
-lr_pred = lr.predict(x_test)
-lasso_pred = lasso.predict(x_test)
-ridge_pred = ridge.predict(x_test)
+y_pred = model.predict(x_test)
 
-print("\nModel coeefficients.....\nlr,lasso,ridge")
-for i,val in enumerate(lr.coef_):
-    print("{}\t{}\t{}".format(val,lasso.coef_[i],ridge.coef_[i]))
-
-print("\nW0 = {}\t{}\t{} ".format(lr.intercept_,lasso.intercept_,ridge.intercept_))
-
-print("\nmean_squared_error = {}\t{}\t{}".format(mean_squared_error(y_test,lr_pred),mean_squared_error(y_test,lasso_pred),mean_squared_error(y_test,ridge_pred)))
-print("\nr2_score = {}\t{}\t{}".format(r2_score(y_test,lr_pred),r2_score(y_test,lasso_pred),r2_score(y_test,ridge_pred)))
+print("mean_squared_error = ",mean_squared_error(y_test,y_pred))
+print("r2_score = " , r2_score(y_test,y_pred))

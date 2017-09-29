@@ -38,4 +38,3 @@ print("\nr2_score = {}\t{}".format(r2_score(y_test,lr_pred),r2_score(y_test,ridg
 print(""" to individually extracting a column 
 data.data[:5,(data.feature_names == 'TAX').astype('int').argmax()]
 """)
-s
