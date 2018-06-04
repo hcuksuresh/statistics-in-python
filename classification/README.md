@@ -1,4 +1,4 @@
-RandomForrest
+## RandomForrest
 
 RF is biased towards the continuous features. If you have ordinal or categorical variables, they are less likely to be selected for the splits. This is a known problem for RF. 
 
@@ -9,3 +9,6 @@ One method you could do is to identify informative features and then use only th
 https://www.researchgate.net/post/Im_trying_to_apply_random_forests_in_a_sparse_data_set_Unfortunately_there_is_more_than_40_error_in_my_result_Can_anyone_suggest_where_to_refine
 
 
+## Adaboost
+
+Adaboost is best for binary classification.
